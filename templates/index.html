@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creative Technology Portfolio Optimizer | Info-Tech Research Group</title>
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     HEADER — Info-Tech branding
+════════════════════════════════════════════════════ -->
+<header class="it-header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="header-logo-box">
+        <i class="fas fa-layer-group"></i>
+      </div>
+      <div>
+        <div class="header-title">Creative Technology Portfolio Optimizer</div>
+        <div class="header-sub">Higher Education Adobe &amp; Canva License Assessment Platform</div>
+      </div>
+    </div>
+    <div class="header-badge">
+      <i class="fas fa-university"></i>&ensp;For Higher Ed CIOs &amp; IT Leaders
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════
+     STICKY STEP PROGRESS NAV
+════════════════════════════════════════════════════ -->
+<nav class="step-nav" id="step-nav">
+  <div class="step-nav-inner">
+    <div class="step-tab active-tab" id="tab-0" onclick="goToStep(0)">
+      <span class="step-num">1</span><span class="step-lbl">Institution Profile</span>
+    </div>
+    <i class="fas fa-chevron-right step-sep"></i>
+    <div class="step-tab" id="tab-1" onclick="goToStep(1)">
+      <span class="step-num">2</span><span class="step-lbl">License &amp; Usage</span>
+    </div>
+    <i class="fas fa-chevron-right step-sep"></i>
+    <div class="step-tab" id="tab-2" onclick="goToStep(2)">
+      <span class="step-num">3</span><span class="step-lbl">User Segmentation</span>
+    </div>
+    <i class="fas fa-chevron-right step-sep"></i>
+    <div class="step-tab" id="tab-3" onclick="goToStep(3)">
+      <span class="step-num">4</span><span class="step-lbl">Academic Dependencies</span>
+    </div>
+    <i class="fas fa-chevron-right step-sep"></i>
+    <div class="step-tab" id="tab-4" onclick="goToStep(4)">
+      <span class="step-num">5</span><span class="step-lbl">Financial Modeling</span>
+    </div>
+    <i class="fas fa-chevron-right step-sep"></i>
+    <div class="step-tab" id="tab-5" onclick="goToStep(5)">
+      <span class="step-num">6</span><span class="step-lbl">Results &amp; Reports</span>
+    </div>
+  </div>
+</nav>
+
+<main class="main-wrap">
+
+<!-- ═══════════════════════════════════════════════════
+     STEP 0 — INSTITUTION PROFILE
+════════════════════════════════════════════════════ -->
+<section id="step-0" class="step-panel">
+  <div class="phase-header">
+    <div class="phase-icon"><i class="fas fa-university"></i></div>
+    <div>
+      <h2 class="phase-title">Phase 1 — Institution Profiling</h2>
+      <p class="phase-sub">Establish the institutional context to calibrate the analysis</p>
+    </div>
+  </div>
+
+  <div class="grid-2 mt-6">
+    <!-- Card 1 -->
+    <div class="card">
+      <h3 class="card-title"><i class="fas fa-building"></i> Institution Details</h3>
+      <div class="form-group">
+        <label>Institution Name</label>
+        <input type="text" id="inst-name" placeholder="e.g., State University" />
+      </div>
+      <div class="form-group">
+        <label>Institution Type</label>
+        <select id="inst-type">
+          <option value="">— Select Type —</option>
+          <option value="r1">R1 Research University</option>
+          <option value="r2">R2 Research University</option>
+          <option value="regional">Regional / Teaching University</option>
+          <option value="liberal_arts">Liberal Arts College</option>
+          <option value="community">Community College</option>
+          <option value="arts_focused">Arts / Design-Focused Institution</option>
+          <option value="medical">Medical / Health Sciences</option>
+          <option value="online_heavy">Online-Heavy Institution</option>
+          <option value="hbcu">HBCU</option>
+          <option value="technical">Technical / Polytechnic</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Total Enrollment (Headcount)</label>
+        <input type="number" id="enrollment" placeholder="e.g., 25000" min="0" />
+      </div>
+      <div class="form-group">
+        <label>Total Employee / Staff Count</label>
+        <input type="number" id="employee-count" placeholder="e.g., 3500" min="0" />
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <h3 class="card-title"><i class="fas fa-palette"></i> Creative Program Intensity</h3>
+      <div class="form-group">
+        <label>Design/Media-Intensive Programs?
+          <span class="badge badge-info">Affects Adobe dependency</span></label>
+        <select id="design-programs">
+          <option value="none">None / Very Few</option>
+          <option value="some">Some (1–3 programs)</option>
+          <option value="moderate">Moderate (4–8 programs)</option>
+          <option value="many">Many (9+ programs)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Marketing &amp; Communications Staff Size</label>
+        <input type="number" id="marcomm-staff" placeholder="e.g., 25" min="0" />
+      </div>
+      <div class="form-group">
+        <label>Film / Video Production Program?</label>
+        <select id="film-program">
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Architecture or Digital Media Programs?</label>
+        <select id="arch-program">
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <h3 class="card-title"><i class="fas fa-cloud"></i> Existing Technology Environment</h3>
+      <div class="form-group">
+        <label>Microsoft 365 / Azure AD Deployment</label>
+        <select id="m365">
+          <option value="full">Fully Deployed (all users)</option>
+          <option value="partial">Partial Deployment</option>
+          <option value="none">Not Deployed</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Google Workspace Deployment</label>
+        <select id="google-ws">
+          <option value="none">Not Deployed</option>
+          <option value="partial">Partial Deployment</option>
+          <option value="full">Fully Deployed (all users)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Existing Canva Deployment</label>
+        <select id="canva-existing">
+          <option value="none">None</option>
+          <option value="dept">Departmental / Limited</option>
+          <option value="pilot">Active Pilot</option>
+          <option value="enterprise">Canva for Education / Enterprise</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Current LMS Platform</label>
+        <select id="lms">
+          <option value="canvas">Canvas (Instructure)</option>
+          <option value="blackboard">Blackboard / Anthology</option>
+          <option value="moodle">Moodle</option>
+          <option value="d2l">D2L Brightspace</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+      <h3 class="card-title"><i class="fas fa-file-contract"></i> Current Adobe Contract</h3>
+      <div class="form-group">
+        <label>Adobe Contract Type</label>
+        <select id="adobe-contract">
+          <option value="etla">ETLA (Enterprise Term License Agreement)</option>
+          <option value="vip">VIP (Value Incentive Plan)</option>
+          <option value="ccep">Creative Cloud Education Plan</option>
+          <option value="named">Named User Licenses</option>
+          <option value="shared">Shared Device Licenses</option>
+          <option value="unknown">Unknown / Mix</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Contract Renewal Date</label>
+        <input type="date" id="renewal-date" />
+      </div>
+      <div class="form-group">
+        <label>Primary Adobe Procurement Vehicle</label>
+        <select id="procurement">
+          <option value="direct">Direct with Adobe</option>
+          <option value="var">Through VAR / Reseller</option>
+          <option value="consortium">Through Consortium (Internet2, EDUCAUSE)</option>
+          <option value="state">State Contract</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-footer">
+    <div></div>
+    <button class="btn btn-primary" onclick="goToStep(1)">
+      Next: License &amp; Usage Analysis <i class="fas fa-arrow-right ml-1"></i>
+    </button>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     STEP 1 — LICENSE & USAGE
+════════════════════════════════════════════════════ -->
+<section id="step-1" class="step-panel hidden">
+  <div class="phase-header">
+    <div class="phase-icon"><i class="fas fa-chart-bar"></i></div>
+    <div>
+      <h2 class="phase-title">Phase 2 — License &amp; Usage Analysis</h2>
+      <p class="phase-sub">Enter current licensing volumes and usage intensity data from Adobe Admin Console</p>
+    </div>
+  </div>
+
+  <div class="info-banner mt-5">
+    <i class="fas fa-lightbulb"></i>
+    <span><strong>Data Sources:</strong> Adobe Admin Console exports, license assignment reports, usage APIs, or estimates based on department surveys.</span>
+  </div>
+
+  <div class="grid-2 mt-5">
+    <div class="card">
+      <h3 class="card-title"><i class="fas fa-id-card"></i> Adobe License Volumes</h3>
+      <div class="form-group">
+        <label>Total Adobe CC Named User Licenses Assigned</label>
+        <input type="number" id="adobe-total" placeholder="e.g., 2000" min="0" oninput="updateUsageCalc()" />
+      </div>
+      <div class="form-group">
+        <label>Annual Adobe License Cost (Total $)</label>
+        <input type="number" id="adobe-cost" placeholder="e.g., 350000" min="0" />
+      </div>
+      <div class="form-group">
+        <label>Licenses Assigned to Faculty</label>
+        <input type="number" id="adobe-faculty" placeholder="e.g., 600" min="0" />
+      </div>
+      <div class="form-group">
+        <label>Licenses Assigned to Staff</label>
+        <input type="number" id="adobe-staff" placeholder="e.g., 400" min="0" />
+      </div>
+      <div class="form-group">
+        <label>Licenses Assigned to Students</label>
+        <input type="number" id="adobe-students" placeholder="e.g., 1000" min="0" />
+      </div>
+      <div class="form-group">
+        <label>Shared Device / Lab Licenses</label>
+        <input type="number" id="adobe-shared" placeholder="e.g., 0" min="0" />
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 class="card-title"><i class="fas fa-activity"></i> Usage Intensity (Last 12 Months)</h3>
+      <p class="form-hint">Estimate percentages based on Adobe Admin Console or usage surveys</p>
+
+      <div class="form-group mt-3">
+        <label>% Licenses with NO activity in 90+ days <span class="badge badge-danger">Inactive</span></label>
+        <div class="slider-row">
+          <input type="range" id="pct-inactive" min="0" max="100" value="30"
+                 oninput="updateSlider('pct-inactive','val-inactive'); updateUsageCalc()" />
+          <span id="val-inactive" class="slider-val">30%</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>% Using ONLY Acrobat (no creative apps) <span class="badge badge-warn">Acrobat-Only</span></label>
+        <div class="slider-row">
+          <input type="range" id="pct-acrobat" min="0" max="100" value="20"
+                 oninput="updateSlider('pct-acrobat','val-acrobat'); updateUsageCalc()" />
+          <span id="val-acrobat" class="slider-val">20%</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>% Light creators (basic graphics / occasional) <span class="badge badge-info">Canva Candidate</span></label>
+        <div class="slider-row">
+          <input type="range" id="pct-light" min="0" max="100" value="25"
+                 oninput="updateSlider('pct-light','val-light'); updateUsageCalc()" />
+          <span id="val-light" class="slider-val">25%</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>% Power users (Photoshop/Premiere daily+) <span class="badge badge-keep">Keep Adobe</span></label>
+        <div class="slider-row">
+          <input type="range" id="pct-power" min="0" max="100" value="15"
+                 oninput="updateSlider('pct-power','val-power'); updateUsageCalc()" />
+          <span id="val-power" class="slider-val">15%</span>
+        </div>
+      </div>
+
+      <div id="usage-calc-panel" class="usage-breakdown-box">
+        <div class="usage-breakdown-title">Estimated License Breakdown</div>
+        <div id="usage-breakdown"><em class="form-hint">Enter total licenses above to see breakdown.</em></div>
+      </div>
+    </div>
+
+    <!-- App usage heatmap -->
+    <div class="card span-2">
+      <h3 class="card-title"><i class="fas fa-th"></i> Application-Level Usage</h3>
+      <p class="form-hint mb-4">Estimate % of licensed users who actively use each application</p>
+      <div class="app-grid">
+        <div class="app-card">
+          <div class="app-icon" style="background:#DBEAFE;color:#1D4ED8"><i class="fas fa-image"></i></div>
+          <label>Photoshop</label>
+          <input type="number" id="use-ps" value="18" min="0" max="100" placeholder="%" />
+          <span class="app-unit">% of users</span>
+        </div>
+        <div class="app-card">
+          <div class="app-icon" style="background:#FFEDD5;color:#C2410C"><i class="fas fa-pen-nib"></i></div>
+          <label>Illustrator</label>
+          <input type="number" id="use-ai" value="12" min="0" max="100" placeholder="%" />
+          <span class="app-unit">% of users</span>
+        </div>
+        <div class="app-card">
+          <div class="app-icon" style="background:#FEE2E2;color:#B91C1C"><i class="fas fa-columns"></i></div>
+          <label>InDesign</label>
+          <input type="number" id="use-id" value="8" min="0" max="100" placeholder="%" />
+          <span class="app-unit">% of users</span>
+        </div>
+        <div class="app-card">
+          <div class="app-icon" style="background:#EDE9FE;color:#6D28D9"><i class="fas fa-film"></i></div>
+          <label>Premiere Pro</label>
+          <input type="number" id="use-pr" value="10" min="0" max="100" placeholder="%" />
+          <span class="app-unit">% of users</span>
+        </div>
+        <div class="app-card">
+          <div class="app-icon" style="background:#FCE7F3;color:#9D174D"><i class="fas fa-magic"></i></div>
+          <label>After Effects</label>
+          <input type="number" id="use-ae" value="5" min="0" max="100" placeholder="%" />
+          <span class="app-unit">% of users</span>
+        </div>
+        <div class="app-card">
+          <div class="app-icon" style="background:#FEE2E2;color:#991B1B"><i class="fas fa-file-pdf"></i></div>
+          <label>Acrobat Pro</label>
+          <input type="number" id="use-acro" value="65" min="0" max="100" placeholder="%" />
+          <span class="app-unit">% of users</span>
+        </div>
+        <div class="app-card">
+          <div class="app-icon" style="background:#CCFBF1;color:#0F766E"><i class="fas fa-cube"></i></div>
+          <label>Dimension/Sub</label>
+          <input type="number" id="use-dim" value="3" min="0" max="100" placeholder="%" />
+          <span class="app-unit">% of users</span>
+        </div>
+        <div class="app-card">
+          <div class="app-icon" style="background:#EAF2F9;color:#2676B7"><i class="fas fa-star"></i></div>
+          <label>Adobe Express</label>
+          <input type="number" id="use-express" value="20" min="0" max="100" placeholder="%" />
+          <span class="app-unit">% of users</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-footer">
+    <button class="btn btn-secondary" onclick="goToStep(0)"><i class="fas fa-arrow-left mr-1"></i> Back</button>
+    <button class="btn btn-primary" onclick="goToStep(2)">Next: User Segmentation <i class="fas fa-arrow-right ml-1"></i></button>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     STEP 2 — USER SEGMENTATION
+════════════════════════════════════════════════════ -->
+<section id="step-2" class="step-panel hidden">
+  <div class="phase-header">
+    <div class="phase-icon"><i class="fas fa-users"></i></div>
+    <div>
+      <h2 class="phase-title">Phase 3 — User Segmentation Engine</h2>
+      <p class="phase-sub">Define your user populations and assign tooling recommendations</p>
+    </div>
+  </div>
+
+  <div class="info-banner mt-5">
+    <i class="fas fa-info-circle"></i>
+    <span>Enter headcount for each user segment. The tool will automatically calculate recommended tooling and generate segmentation reports.</span>
+  </div>
+
+  <div class="seg-grid mt-5">
+    <!-- Power Users -->
+    <div class="seg-card" style="--seg-color:#C0392B;--seg-bg:#FEF2F2">
+      <div class="seg-header" style="background:#C0392B">
+        <i class="fas fa-bolt"></i> Creative Power Users
+      </div>
+      <div class="seg-body">
+        <p class="seg-desc">Marketing, communications, design programs, video production, architecture, digital media faculty/students. Require full Adobe CC.</p>
+        <div class="form-group"><label>Headcount</label>
+          <input type="number" id="seg-power" placeholder="e.g., 120" min="0" oninput="calcSegTotal()" /></div>
+        <div class="form-group"><label>Departments / Groups</label>
+          <input type="text" id="seg-power-dept" placeholder="e.g., Design, Marketing, Film" /></div>
+        <div class="rec-badge" style="background:#FEF2F2;color:#C0392B;border-color:#FECACA">
+          <i class="fas fa-check-circle"></i> Retain Full Adobe Creative Cloud
+        </div>
+      </div>
+    </div>
+
+    <!-- Light Designers -->
+    <div class="seg-card" style="--seg-color:#C47F00;--seg-bg:#FFFBEB">
+      <div class="seg-header" style="background:#C47F00">
+        <i class="fas fa-paint-brush"></i> Light Designers / Content Creators
+      </div>
+      <div class="seg-body">
+        <p class="seg-desc">Faculty, staff, student org leaders creating flyers, social graphics, presentations, simple videos, newsletters.</p>
+        <div class="form-group"><label>Headcount</label>
+          <input type="number" id="seg-light" placeholder="e.g., 350" min="0" oninput="calcSegTotal()" /></div>
+        <div class="form-group"><label>Departments / Groups</label>
+          <input type="text" id="seg-light-dept" placeholder="e.g., Faculty, Student Affairs" /></div>
+        <div class="rec-badge" style="background:#FFFBEB;color:#C47F00;border-color:#FDE68A">
+          <i class="fas fa-sync"></i> Migrate to Canva (or Adobe Express)
+        </div>
+      </div>
+    </div>
+
+    <!-- Academic -->
+    <div class="seg-card" style="--seg-color:#1A7A4A;--seg-bg:#F0FDF4">
+      <div class="seg-header" style="background:#1A7A4A">
+        <i class="fas fa-chalkboard-teacher"></i> Academic Content Creators
+      </div>
+      <div class="seg-body">
+        <p class="seg-desc">Instructional designers, course developers, advisors. LMS/video/slides/simple editing workflows.</p>
+        <div class="form-group"><label>Headcount</label>
+          <input type="number" id="seg-academic" placeholder="e.g., 80" min="0" oninput="calcSegTotal()" /></div>
+        <div class="form-group"><label>Departments / Groups</label>
+          <input type="text" id="seg-academic-dept" placeholder="e.g., CTL, Online Education, Advising" /></div>
+        <div class="rec-badge" style="background:#F0FDF4;color:#1A7A4A;border-color:#BBF7D0">
+          <i class="fas fa-tools"></i> Canva + Selective Adobe (Acrobat)
+        </div>
+      </div>
+    </div>
+
+    <!-- Occasional -->
+    <div class="seg-card" style="--seg-color:#475569;--seg-bg:#F8FAFC">
+      <div class="seg-header" style="background:#475569">
+        <i class="fas fa-user-clock"></i> Occasional / Consumer Users
+      </div>
+      <div class="seg-body">
+        <p class="seg-desc">Open PDFs, edit an image 1–2× per semester. No need for named premium licenses.</p>
+        <div class="form-group"><label>Headcount</label>
+          <input type="number" id="seg-occasional" placeholder="e.g., 600" min="0" oninput="calcSegTotal()" /></div>
+        <div class="form-group"><label>Departments / Groups</label>
+          <input type="text" id="seg-occasional-dept" placeholder="e.g., General Admin, Business Office" /></div>
+        <div class="rec-badge" style="background:#F1F5F9;color:#475569;border-color:#CBD5E1">
+          <i class="fas fa-times-circle"></i> Remove / Shared Device Only
+        </div>
+      </div>
+    </div>
+
+    <!-- Students -->
+    <div class="seg-card" style="--seg-color:#2676B7;--seg-bg:#EAF2F9">
+      <div class="seg-header" style="background:#2676B7">
+        <i class="fas fa-graduation-cap"></i> General Student Population
+      </div>
+      <div class="seg-body">
+        <p class="seg-desc">Non-specialized students with light creation needs (assignments, presentations, club materials).</p>
+        <div class="form-group"><label>Headcount</label>
+          <input type="number" id="seg-students" placeholder="e.g., 800" min="0" oninput="calcSegTotal()" /></div>
+        <div class="form-group"><label>Departments / Groups</label>
+          <input type="text" id="seg-students-dept" placeholder="e.g., General undergraduate, Graduate" /></div>
+        <div class="rec-badge" style="background:#EAF2F9;color:#2676B7;border-color:#74A5CD">
+          <i class="fas fa-sync"></i> Migrate to Canva for Education
+        </div>
+      </div>
+    </div>
+
+    <!-- Curriculum Critical -->
+    <div class="seg-card" style="--seg-color:#6D28D9;--seg-bg:#F5F3FF">
+      <div class="seg-header" style="background:#6D28D9">
+        <i class="fas fa-book-open"></i> Curriculum-Critical Users
+      </div>
+      <div class="seg-body">
+        <p class="seg-desc">Students/faculty in programs where Adobe is explicitly required by curriculum, accreditation, or workforce readiness.</p>
+        <div class="form-group"><label>Headcount</label>
+          <input type="number" id="seg-curriculum" placeholder="e.g., 200" min="0" oninput="calcSegTotal()" /></div>
+        <div class="form-group"><label>Departments / Groups</label>
+          <input type="text" id="seg-curriculum-dept" placeholder="e.g., Graphic Design BFA, Film MFA" /></div>
+        <div class="rec-badge" style="background:#F5F3FF;color:#6D28D9;border-color:#DDD6FE">
+          <i class="fas fa-shield-alt"></i> Protect Adobe — Curriculum Dependency
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary row -->
+  <div class="card mt-5">
+    <div class="seg-summary-header">
+      <h3 class="card-title"><i class="fas fa-calculator"></i> Segmentation Summary</h3>
+      <span id="seg-total-badge" class="seg-total-badge">Total: 0 users segmented</span>
+    </div>
+    <div id="seg-summary-grid" class="seg-summary-grid"></div>
+  </div>
+
+  <div class="step-footer">
+    <button class="btn btn-secondary" onclick="goToStep(1)"><i class="fas fa-arrow-left mr-1"></i> Back</button>
+    <button class="btn btn-primary" onclick="goToStep(3)">Next: Academic Dependencies <i class="fas fa-arrow-right ml-1"></i></button>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     STEP 3 — ACADEMIC DEPENDENCIES
+════════════════════════════════════════════════════ -->
+<section id="step-3" class="step-panel hidden">
+  <div class="phase-header">
+    <div class="phase-icon"><i class="fas fa-book-open"></i></div>
+    <div>
+      <h2 class="phase-title">Phase 4 — Curriculum &amp; Academic Dependency Analysis</h2>
+      <p class="phase-sub">Identify academic programs that require Adobe — critical for political risk management</p>
+    </div>
+  </div>
+
+  <div class="warn-banner mt-5">
+    <i class="fas fa-exclamation-triangle"></i>
+    <span><strong>Political Risk Alert:</strong> Failing to protect curriculum-critical Adobe use is the #1 failure mode for this initiative. This phase ensures academic freedom and program needs are preserved.</span>
+  </div>
+
+  <div class="grid-2 mt-5">
+    <div class="card">
+      <h3 class="card-title"><i class="fas fa-graduation-cap"></i> Adobe-Required Academic Programs</h3>
+      <p class="form-hint">List programs where Adobe CC is required for curriculum delivery or accreditation</p>
+      <div id="program-list" class="mt-3 space-y-2"></div>
+      <button class="btn-link mt-3" onclick="addProgram()">
+        <i class="fas fa-plus-circle"></i> Add Program
+      </button>
+    </div>
+
+    <div class="card">
+      <h3 class="card-title"><i class="fas fa-shield-alt"></i> Dependency Risk Factors</h3>
+      <div class="form-group">
+        <label>Accreditation Bodies Referencing Adobe Tools?</label>
+        <select id="accreditation">
+          <option value="none">None identified</option>
+          <option value="some">Some (NASAD, ACEJMC, etc.)</option>
+          <option value="critical">Critical — accreditation at risk if Adobe removed</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Workforce Readiness: Employers Expect Adobe Proficiency?</label>
+        <select id="workforce-req">
+          <option value="low">Low — general digital literacy sufficient</option>
+          <option value="medium">Medium — some programs require it</option>
+          <option value="high">High — most graduate-bound employers require Adobe skills</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Faculty Governance Maturity</label>
+        <select id="faculty-gov">
+          <option value="low">Low — faculty have limited input on software</option>
+          <option value="medium">Medium — faculty senate consulted periodically</option>
+          <option value="high">High — faculty senate must approve tool changes</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Have You Conducted Faculty Usage Surveys?</label>
+        <select id="faculty-survey">
+          <option value="no">No — relying on admin data</option>
+          <option value="informal">Informal / departmental only</option>
+          <option value="formal">Yes — formal survey completed</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Research Visualization: Adobe Used for Research Outputs?</label>
+        <select id="research-viz">
+          <option value="none">None / minimal</option>
+          <option value="some">Some (e.g., design research)</option>
+          <option value="significant">Significant — multiple research groups</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="card span-2">
+      <h3 class="card-title"><i class="fas fa-balance-scale"></i> Change Readiness Assessment</h3>
+      <div class="grid-3">
+        <div class="form-group">
+          <label>IT License Governance Maturity</label>
+          <select id="gov-maturity">
+            <option value="1">1 — Ad hoc, no formal process</option>
+            <option value="2">2 — Informal tracking</option>
+            <option value="3">3 — Documented but inconsistent</option>
+            <option value="4">4 — Formal SAM processes in place</option>
+            <option value="5">5 — Mature, data-driven governance</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Digital Literacy Level Across Campus</label>
+          <select id="digital-literacy">
+            <option value="low">Low — significant support burden expected</option>
+            <option value="medium">Medium — typical higher ed population</option>
+            <option value="high">High — tech-forward campus culture</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Preferred Rollout Strategy</label>
+          <select id="rollout-strategy">
+            <option value="pilot">Pilot First (volunteer departments)</option>
+            <option value="phased">Phased by department</option>
+            <option value="big_bang">Institution-wide simultaneously</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group mt-4">
+        <label>Additional Notes / Special Considerations</label>
+        <textarea id="special-notes" placeholder="e.g., Specific programs with contractual Adobe requirements, upcoming accreditation reviews, pending curriculum changes..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-footer">
+    <button class="btn btn-secondary" onclick="goToStep(2)"><i class="fas fa-arrow-left mr-1"></i> Back</button>
+    <button class="btn btn-primary" onclick="goToStep(4)">Next: Financial Modeling <i class="fas fa-arrow-right ml-1"></i></button>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     STEP 4 — FINANCIAL MODELING
+════════════════════════════════════════════════════ -->
+<section id="step-4" class="step-panel hidden">
+  <div class="phase-header">
+    <div class="phase-icon"><i class="fas fa-dollar-sign"></i></div>
+    <div>
+      <h2 class="phase-title">Phase 5 — Financial Optimization Modeling</h2>
+      <p class="phase-sub">Model cost scenarios and calculate projected savings across strategies</p>
+    </div>
+  </div>
+
+  <div class="grid-2 mt-6">
+    <div class="card">
+      <h3 class="card-title"><i class="fas fa-receipt"></i> Current Cost Inputs</h3>
+      <div class="form-group">
+        <label>Annual Adobe CC Cost (full contract)</label>
+        <div class="input-prefix"><span>$</span><input type="number" id="fin-adobe-cost" placeholder="350000" min="0" oninput="runScenarios()" /></div>
+      </div>
+      <div class="form-group">
+        <label>Annual Adobe Support / Training Cost</label>
+        <div class="input-prefix"><span>$</span><input type="number" id="fin-support-cost" placeholder="15000" min="0" oninput="runScenarios()" /></div>
+      </div>
+      <div class="form-group">
+        <label>Adobe Acrobat Pro — Annual Cost (if separate)</label>
+        <div class="input-prefix"><span>$</span><input type="number" id="fin-acrobat-cost" placeholder="0" min="0" oninput="runScenarios()" /></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 class="card-title"><i class="fas fa-tag"></i> Alternative Platform Pricing</h3>
+      <div class="form-group">
+        <label>Canva for Education (per user / year)</label>
+        <div class="input-prefix"><span>$</span><input type="number" id="fin-canva-user" value="0" min="0" oninput="runScenarios()" />
+          <span class="free-note">Often FREE for edu!</span></div>
+      </div>
+      <div class="form-group">
+        <label>Canva Enterprise (per user / year)</label>
+        <div class="input-prefix"><span>$</span><input type="number" id="fin-canva-ent" value="120" min="0" oninput="runScenarios()" /></div>
+      </div>
+      <div class="form-group">
+        <label>Adobe Express for Education (per user / year)</label>
+        <div class="input-prefix"><span>$</span><input type="number" id="fin-express-user" value="0" min="0" oninput="runScenarios()" /></div>
+      </div>
+      <div class="form-group">
+        <label>Migration / Change Management (one-time)</label>
+        <div class="input-prefix"><span>$</span><input type="number" id="fin-migration-cost" placeholder="25000" min="0" oninput="runScenarios()" /></div>
+      </div>
+      <div class="form-group">
+        <label>Training &amp; Adoption Cost (one-time)</label>
+        <div class="input-prefix"><span>$</span><input type="number" id="fin-training-cost" placeholder="10000" min="0" oninput="runScenarios()" /></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scenario sliders -->
+  <div class="card mt-5">
+    <h3 class="card-title"><i class="fas fa-sliders-h"></i> Optimization Scenario Parameters</h3>
+    <p class="form-hint mb-4">Adjust reduction percentages for each scenario</p>
+    <div class="sc-grid">
+      <div class="sc-param-card" style="background:#F8FAFC">
+        <div class="sc-label">Scenario B <span>Light Optimization</span></div>
+        <label class="sc-sublabel">Remove inactive licenses</label>
+        <div class="slider-row"><input type="range" id="sc-b-reduce" min="5" max="50" value="20"
+          oninput="updateSlider('sc-b-reduce','sc-b-v'); runScenarios()" /><span id="sc-b-v" class="slider-val">20%</span></div>
+      </div>
+      <div class="sc-param-card" style="background:#EAF2F9">
+        <div class="sc-label" style="color:#2676B7">Scenario C <span>Segmented Portfolio</span></div>
+        <label class="sc-sublabel">Adobe reduction %</label>
+        <div class="slider-row"><input type="range" id="sc-c-reduce" min="10" max="70" value="40"
+          oninput="updateSlider('sc-c-reduce','sc-c-v'); runScenarios()" /><span id="sc-c-v" class="slider-val">40%</span></div>
+        <label class="sc-sublabel mt-2">Canva users (% of total)</label>
+        <div class="slider-row"><input type="range" id="sc-c-canva" min="10" max="80" value="35"
+          oninput="updateSlider('sc-c-canva','sc-c-cv'); runScenarios()" /><span id="sc-c-cv" class="slider-val">35%</span></div>
+      </div>
+      <div class="sc-param-card" style="background:#FFFBEB">
+        <div class="sc-label" style="color:#C47F00">Scenario D <span>Aggressive Rationalization</span></div>
+        <label class="sc-sublabel">Adobe reduction %</label>
+        <div class="slider-row"><input type="range" id="sc-d-reduce" min="30" max="80" value="60"
+          oninput="updateSlider('sc-d-reduce','sc-d-v'); runScenarios()" /><span id="sc-d-v" class="slider-val">60%</span></div>
+        <label class="sc-sublabel mt-2">Canva users (% of total)</label>
+        <div class="slider-row"><input type="range" id="sc-d-canva" min="20" max="90" value="55"
+          oninput="updateSlider('sc-d-canva','sc-d-cv'); runScenarios()" /><span id="sc-d-cv" class="slider-val">55%</span></div>
+      </div>
+      <div class="sc-param-card" style="background:#F5F3FF">
+        <div class="sc-label" style="color:#6D28D9">Scenario E <span>Academic Exception</span></div>
+        <label class="sc-sublabel">Adobe reduction %</label>
+        <div class="slider-row"><input type="range" id="sc-e-reduce" min="20" max="75" value="50"
+          oninput="updateSlider('sc-e-reduce','sc-e-v'); runScenarios()" /><span id="sc-e-v" class="slider-val">50%</span></div>
+        <p class="form-hint mt-2">Adobe reserved for curriculum-critical only; all others moved to Canva</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Live scenario cards -->
+  <div id="scenario-results" class="sc-results-grid mt-5"></div>
+
+  <div class="step-footer">
+    <button class="btn btn-secondary" onclick="goToStep(3)"><i class="fas fa-arrow-left mr-1"></i> Back</button>
+    <button class="btn btn-primary" onclick="goToStep(5); generateReport()">
+      Generate Full Report <i class="fas fa-chart-line ml-1"></i>
+    </button>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     STEP 5 — RESULTS & REPORTS
+════════════════════════════════════════════════════ -->
+<section id="step-5" class="step-panel hidden">
+  <div class="phase-header">
+    <div class="phase-icon"><i class="fas fa-chart-line"></i></div>
+    <div>
+      <h2 class="phase-title">Phase 6 — Results Dashboard &amp; Executive Reports</h2>
+      <p class="phase-sub">Comprehensive analysis, scenarios, and stakeholder-ready outputs</p>
+    </div>
+  </div>
+
+  <!-- KPI strip -->
+  <div id="kpi-strip" class="kpi-strip mt-5"></div>
+
+  <!-- Report tabs -->
+  <div class="report-shell mt-6">
+    <div class="report-tabs" id="report-tabs">
+      <button class="rtab active-rtab" onclick="showReport('overview',this)"><i class="fas fa-tachometer-alt"></i> Overview</button>
+      <button class="rtab" onclick="showReport('segmentation',this)"><i class="fas fa-users"></i> Segmentation</button>
+      <button class="rtab" onclick="showReport('financial',this)"><i class="fas fa-dollar-sign"></i> Financial</button>
+      <button class="rtab" onclick="showReport('risk',this)"><i class="fas fa-shield-alt"></i> Risk Analysis</button>
+      <button class="rtab" onclick="showReport('departments',this)"><i class="fas fa-sitemap"></i> Departments</button>
+      <button class="rtab" onclick="showReport('roadmap',this)"><i class="fas fa-road"></i> Roadmap</button>
+      <button class="rtab" onclick="showReport('executive',this)"><i class="fas fa-briefcase"></i> Executive Brief</button>
+    </div>
+
+    <div class="report-body" id="report-body">
+      <!-- OVERVIEW -->
+      <div id="report-overview" class="rsection">
+        <div class="chart-grid-2">
+          <div class="chart-box">
+            <div class="chart-title"><i class="fas fa-chart-pie"></i> License Utilization Breakdown</div>
+            <div class="chart-wrap"><canvas id="chart-utilization"></canvas></div>
+          </div>
+          <div class="chart-box">
+            <div class="chart-title"><i class="fas fa-chart-bar"></i> Scenario Cost Comparison</div>
+            <div class="chart-wrap"><canvas id="chart-scenarios"></canvas></div>
+          </div>
+        </div>
+        <div class="chart-box mt-4">
+          <div class="chart-title"><i class="fas fa-chart-line"></i> 3-Year Cost Projection</div>
+          <div class="chart-wrap"><canvas id="chart-projection"></canvas></div>
+        </div>
+        <div id="overview-findings" class="mt-5"></div>
+      </div>
+
+      <!-- SEGMENTATION -->
+      <div id="report-segmentation" class="rsection hidden">
+        <div class="chart-grid-2">
+          <div class="chart-box">
+            <div class="chart-title"><i class="fas fa-chart-pie"></i> User Population Distribution</div>
+            <div class="chart-wrap"><canvas id="chart-seg-pie"></canvas></div>
+          </div>
+          <div class="chart-box">
+            <div class="chart-title"><i class="fas fa-chart-bar"></i> Application Usage by % of Users</div>
+            <div class="chart-wrap"><canvas id="chart-app-usage"></canvas></div>
+          </div>
+        </div>
+        <div id="seg-table" class="mt-5"></div>
+      </div>
+
+      <!-- FINANCIAL -->
+      <div id="report-financial" class="rsection hidden">
+        <div id="financial-detail"></div>
+        <div class="chart-box mt-5">
+          <div class="chart-title"><i class="fas fa-chart-bar"></i> Annual Savings by Scenario</div>
+          <div class="chart-wrap"><canvas id="chart-savings"></canvas></div>
+        </div>
+      </div>
+
+      <!-- RISK -->
+      <div id="report-risk" class="rsection hidden">
+        <div id="risk-detail"></div>
+      </div>
+
+      <!-- DEPARTMENTS -->
+      <div id="report-departments" class="rsection hidden">
+        <div id="dept-table"></div>
+      </div>
+
+      <!-- ROADMAP -->
+      <div id="report-roadmap" class="rsection hidden">
+        <div id="roadmap-detail"></div>
+      </div>
+
+      <!-- EXECUTIVE -->
+      <div id="report-executive" class="rsection hidden">
+        <div id="exec-brief"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-footer">
+    <button class="btn btn-secondary" onclick="goToStep(4)"><i class="fas fa-arrow-left mr-1"></i> Back to Modeling</button>
+    <div style="display:flex;gap:10px">
+      <button class="btn btn-outline" onclick="window.print()"><i class="fas fa-print mr-1"></i> Print Report</button>
+      <button class="btn btn-primary" onclick="startOver()"><i class="fas fa-redo mr-1"></i> New Assessment</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="it-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <i class="fas fa-layer-group"></i>
+      <span>Creative Technology Portfolio Optimizer</span>
+    </div>
+    <div class="footer-copy">
+      Info-Tech Research Group &mdash; Higher Education License Assessment Platform &mdash; v2.0
+    </div>
+    <div class="footer-disc">
+      For CIO Advisory Use. All projections are estimates based on entered data and industry benchmarks.
+    </div>
+  </div>
+</footer>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>
