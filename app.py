@@ -74,6 +74,13 @@ def index():
     return render_template("index.html", brand=BRAND, segments=SEGMENTS)
 
 
+@app.route("/api/ping")
+def ping():
+    """Keepalive endpoint — called by the frontend on every phase transition
+    to prevent the Render free-tier server from hibernating mid-assessment."""
+    return jsonify({"ok": True, "ts": datetime.now().isoformat()})
+
+
 @app.route("/api/calculate", methods=["POST"])
 def calculate():
     """Main calculation endpoint — receives full form data, returns JSON results."""

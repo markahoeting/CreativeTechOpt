@@ -141,4 +141,3 @@ Accepts form data as JSON and returns full analysis results.
 
 For CIO Advisory Use — Info-Tech Research Group  
 All projections are estimates based on entered data and industry benchmarks.
-# CreativeTechOpt
